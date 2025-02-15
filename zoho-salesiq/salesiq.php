@@ -111,7 +111,7 @@ Note: Zoho SalesIQ JS APIs are not supported for WordPress sites.
             </div>
             <div class="lvd_embdmid">→</div>
             <div class="lvd_embdlft">Just paste the SalesIQ WordPress link here. <div class="">And have your Zoho SalesIQ up and running in no
-time! <br> Don't have an account yet?  <br><span><a target="_blank" href="https://salesiq.zoho.com/register.sas?source=WordPress.salesiqplugin">Register Here</a></span>    
+time! <br> Don't have an account yet?  <br><span><a target="_blank" href="https://zoho.com/salesiq?source=WordPress.salesiqplugin">Register Here</a></span>    
             </div>
         </div>
     </div>
