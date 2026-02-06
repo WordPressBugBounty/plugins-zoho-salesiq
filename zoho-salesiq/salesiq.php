@@ -3,12 +3,12 @@ define( 'ZOHO_SALESIQ_IMG_URL', plugin_dir_url( __FILE__ ) . 'logo.png' );
     $method = sanitize_text_field($_SERVER['REQUEST_METHOD']);
     if ($method === 'POST') {
         $submitted = sanitize_text_field($_POST['ldsubmit']);
-        $nonce_key = $_POST['_wpnonce'];
-        $ldcodesnippet = $_POST['ldcodesnippet'];
+        $nonce_key = sanitize_key($_POST['_wpnonce']);
+        $ldcodesnippet = sanitize_text_field($_POST['ldcodesnippet']);
 
         if(isset($submitted)){
             if(isset($nonce_key) && isset($ldcodesnippet)){
-                if(wp_verify_nonce($_POST['_wpnonce'],"_zoho_salesiq_plugin")){
+                if(wp_verify_nonce($nonce_key,"_zoho_salesiq_plugin")){
                     if(preg_match("/^(https:\/\/salesiq\.)(zoho\.|unionbankofindia\.|zohopublic\.)(([a-z]{1,3}\.)?[a-z]{1,3})(\/widget\?(widgetcode|wc)\=)([a-z0-9]{10,200})$/s", $ldcodesnippet ))
                     {
                         update_option('ldwidgetcodeurl', sanitize_url($ldcodesnippet));
